@@ -84,6 +84,7 @@
 
 .side-nav.opened{
 	transform: translateX(0);
+	box-shadow: 0 0 20vmin 20px #000;
 }
 
 .side-nav-item{
@@ -91,9 +92,16 @@
 	border-bottom: 1px solid #ccc;
 	transition: .3s all;
 	opacity: 0;
+	height: 0;
+	overflow: hidden;
+	transform: translateY(30px);
 }
 .side-nav-item.showing{
 	opacity: 1;
+	height: auto;
+	transition: .2s all;
+	transform: translateY(0);
+
 }
 .side-nav-item a{
 	color: #000;
