@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Navigation</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=0.8">
+	<link rel="stylesheet" type="text/css" href="bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<nav class="site-nav">
+		<div class="container">
+			<a href="#" class="site-nav__logo">LOGO</a>	
+			<div class="pull-right">
+				<a href="#">Share This <span class="fa fa-facebook"></span></a>
+			</div>
+			<div class="clearfix"></div>		
+		</div>
+
+		<div class="nav-toggle">
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
+
+		<div class="side-nav">
+
+			<div class="side-nav-item side-nav-first">
+				<h3>Menu</h3>
+			</div>
+
+			<div class="side-nav-item">
+				<a href="#home">
+					<h4 class="side-nav-item__header">About</h4>
+					<p>Lorem ipsum dolor sit amet.</p>
+				</a>				
+			</div>
+
+			<div class="side-nav-item">
+				<a href="#service">
+					<h4 class="side-nav-item__header">Service</h4>
+					<p>Lorem ipsum dolor sit amet.</p>
+				</a>				
+			</div>
+
+			<div class="side-nav-item">
+				<a href="#contact">
+					<h4 class="side-nav-item__header">Contact Us</h4>
+					<p>Lorem ipsum dolor sit amet.</p>
+				</a>				
+			</div>
+
+			<div class="side-nav-item">
+				<a href="#faq">
+					<h4 class="side-nav-item__header">FAQ</h4>
+					<p>Lorem ipsum dolor sit amet.</p>
+				</a>				
+			</div>
+			
+		</div>
+
+	</nav>
+
+	<main class="main-container">
+		
+		<section class="full-height bg-dark" id="banner">
+			
+		</section>
+
+	</main>
+
+<script src="jquery.min.js"></script>
+<script src="bootstrap.min.js"></script>
+<script type="text/javascript">
+
+	toggleNav();
+	animateNavItem();
+
+	function toggleNav(){
+		$('.nav-toggle').on('click', function(){
+			if( $(this).hasClass('active') )
+			{
+				$(this).removeClass('active');
+				$('.side-nav').removeClass('opened');
+				$('.side-nav-first').removeClass('opened');
+			}else{
+				$(this).addClass('active');
+				$('.side-nav').addClass('opened');
+				$('.side-nav-first').addClass('opened');
+			}
+			
+		});
+	}
+
+	function animateNavItem() {
+		$('.side-nav-item').each(function(i) {
+			setTimeout(function() {
+				$('.side-nav-item').eq(i).addClass('showing');
+			}, 300 * (i+1));
+		});
+	}
+
+</script>
+</body>
+</html>
